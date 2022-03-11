@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j0G-lH-rf5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Personyze SDK Demo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Personyze_SDK_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yX3-h5-6LG">
+                                <rect key="frame" x="0.0" y="94" width="375" height="58.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g1i-1Q-S4X">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Key:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASh-9Q-RUX">
+                                                <rect key="frame" x="0.0" y="5" width="63" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-sY-Yop" customClass="MYTextField" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                <rect key="frame" x="71" y="0.0" width="304" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJ3-5Q-xwW">
+                                        <rect key="frame" x="0.0" y="38" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.058454710243412977" blue="0.12012897737456529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yX3-h5-6LG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="45P-bd-gHX"/>
+                            <constraint firstItem="yX3-h5-6LG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="kG9-G9-cau"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yX3-h5-6LG" secondAttribute="trailing" id="lJo-wC-Zy4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Personyze SDK Demo" id="ck9-Jh-vgF">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="qPr-xx-x1h">
+                            <connections>
+                                <segue destination="EHP-iC-6zu" kind="show" identifier="toDemo" id="87Y-l3-bu2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputKey" destination="TBe-sY-Yop" id="LdE-xF-Ofs"/>
+                        <outlet property="labelError" destination="OJ3-5Q-xwW" id="yn5-Ds-o8p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168.80000000000001" y="65.217391304347828"/>
+        </scene>
+        <!--Demo View Controller-->
+        <scene sceneID="YXO-K6-HrO">
+            <objects>
+                <viewController id="EHP-iC-6zu" customClass="DemoViewController" customModule="Personyze_SDK_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Pd-NW-lWo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kV0-Sb-6mC">
+                                <rect key="frame" x="0.0" y="74" width="375" height="814"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO5-H6-FGv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <state key="normal" title="Start new session"/>
+                                        <connections>
+                                            <action selector="clickedNewSession:" destination="EHP-iC-6zu" eventType="touchUpInside" id="nTt-fj-NbF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simulate navigation to new document:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-jd-7nK">
+                                        <rect key="frame" x="0.0" y="38" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-rl-iiw">
+                                        <rect key="frame" x="0.0" y="66.5" width="375" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Document name. like Shopping Cart" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-Od-xSA" customClass="MYTextField" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="309" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-IR-MLa">
+                                                <rect key="frame" x="317" y="0.0" width="20" height="30"/>
+                                            </activityIndicatorView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fl-rl-E5J">
+                                                <rect key="frame" x="345" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="OK"/>
+                                                <connections>
+                                                    <action selector="clickedNav:" destination="EHP-iC-6zu" eventType="touchUpInside" id="noO-cp-zhS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ckm-D2-xjq">
+                                        <rect key="frame" x="0.0" y="104.5" width="375" height="173"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optionally simulate one or several events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgj-w3-T5F">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f47-KJ-0Ee">
+                                                <rect key="frame" x="0.0" y="20.5" width="375" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46K-Eg-flv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36.5" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4P-vm-QbS" customClass="MYPickerView" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="36.5" y="0.0" width="100" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="211-VJ-p7O"/>
+                                                            <constraint firstAttribute="width" constant="100" id="vuf-42-l50"/>
+                                                        </constraints>
+                                                    </pickerView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G5A-wh-SeR" customClass="MYTextField" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="136.5" y="0.0" width="52" height="36"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNK-Tz-BTG">
+                                                        <rect key="frame" x="188.5" y="0.0" width="11" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cjm-7v-XMh" customClass="MYTextField" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="199.5" y="0.0" width="145.5" height="36"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm3-ou-0od">
+                                                        <rect key="frame" x="345" y="0.0" width="30" height="36"/>
+                                                        <state key="normal" title="OK"/>
+                                                        <connections>
+                                                            <action selector="clickedUser:" destination="EHP-iC-6zu" eventType="touchUpInside" id="uXU-Lb-ywa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XQA-ZO-0wE">
+                                                <rect key="frame" x="0.0" y="56.5" width="375" height="36"/>
+                                                <subviews>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3F-hq-83F" customClass="MYPickerView" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="77t-Yd-Uqw"/>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="pfv-A0-XP6"/>
+                                                        </constraints>
+                                                    </pickerView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-wQ-paP" customClass="MYTextField" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="108" y="0.0" width="121" height="36"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQZ-qu-tya" customClass="MYPickerView" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                                        <rect key="frame" x="237" y="0.0" width="100" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="36" id="4bP-sm-oZc"/>
+                                                            <constraint firstAttribute="width" constant="100" id="Ljk-r1-4Pp"/>
+                                                        </constraints>
+                                                    </pickerView>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfu-s3-Czm">
+                                                        <rect key="frame" x="345" y="0.0" width="30" height="36"/>
+                                                        <state key="normal" title="OK"/>
+                                                        <connections>
+                                                            <action selector="clickedProduct:" destination="EHP-iC-6zu" eventType="touchUpInside" id="JD7-rC-v0t"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-tz-bpX">
+                                                <rect key="frame" x="0.0" y="92.5" width="375" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qta-d8-fPJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="30"/>
+                                                        <state key="normal" title="Products in cart purchased"/>
+                                                        <connections>
+                                                            <action selector="clickedBuy:" destination="EHP-iC-6zu" eventType="touchUpInside" id="lS2-GQ-aXw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqm-1g-raF">
+                                                        <rect key="frame" x="212" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Empty cart"/>
+                                                        <connections>
+                                                            <action selector="clickedEmptyCart:" destination="EHP-iC-6zu" eventType="touchUpInside" id="NW4-ES-hN2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1S-oB-tO9">
+                                                        <rect key="frame" x="313" y="0.0" width="62" height="30"/>
+                                                        <state key="normal" title="Unlike all"/>
+                                                        <connections>
+                                                            <action selector="clickedUnlike:" destination="EHP-iC-6zu" eventType="touchUpInside" id="7Du-I6-Wrj"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-F4-rYw">
+                                                <rect key="frame" x="0.0" y="122.5" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-D5-R08">
+                                                <rect key="frame" x="0.0" y="143" width="375" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eov-mX-WRY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="30"/>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="clickedCancel:" destination="EHP-iC-6zu" eventType="touchUpInside" id="q7f-mf-UxQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0i-s2-j8Q">
+                                                        <rect key="frame" x="66.5" y="0.0" width="112.5" height="30"/>
+                                                        <state key="normal" title="Only events"/>
+                                                        <connections>
+                                                            <action selector="clickedLogEvents:" destination="EHP-iC-6zu" eventType="touchUpInside" id="d04-Cl-HxM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-Yx-rnd">
+                                                        <rect key="frame" x="179" y="0.0" width="196" height="30"/>
+                                                        <state key="normal" title="Proceed navigation&gt;">
+                                                            <color key="titleColor" red="0.16675527904808529" green="0.68563795336787559" blue="0.12523610392098589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="clickedGo:" destination="EHP-iC-6zu" eventType="touchUpInside" id="MzJ-mt-W9z"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRj-07-dYf">
+                                        <rect key="frame" x="0.0" y="285.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.058454710239999999" blue="0.1201289774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pXd-ZR-63w" customClass="MYTableView" customModule="Personyze_SDK_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="314" width="375" height="500"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="LCp-9n-f7G"/>
+                                            <constraint firstAttribute="height" constant="500" id="Mf8-lY-If3"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="5zo-YH-T0X" detailTextLabel="lsu-16-4ZU" style="IBUITableViewCellStyleValue1" id="I4N-Lg-fMf">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I4N-Lg-fMf" id="35Y-G8-ywd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5zo-YH-T0X">
+                                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Show" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lsu-16-4ZU">
+                                                            <rect key="frame" x="317.5" y="12" width="42.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dwK-5P-O1s" firstAttribute="trailing" secondItem="kV0-Sb-6mC" secondAttribute="trailing" id="pFT-zx-9Hc"/>
+                            <constraint firstItem="kV0-Sb-6mC" firstAttribute="top" secondItem="dwK-5P-O1s" secondAttribute="top" constant="10" id="pzA-4z-6ww"/>
+                            <constraint firstItem="kV0-Sb-6mC" firstAttribute="leading" secondItem="dwK-5P-O1s" secondAttribute="leading" id="zdl-HN-5Iw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dwK-5P-O1s"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonNav" destination="6fl-rl-E5J" id="bYc-C0-pne"/>
+                        <outlet property="inputNav" destination="S2K-Od-xSA" id="uwp-CS-Wu2"/>
+                        <outlet property="inputProductId" destination="fZL-wQ-paP" id="44m-Nl-759"/>
+                        <outlet property="inputUserField" destination="G5A-wh-SeR" id="avE-B3-U32"/>
+                        <outlet property="inputUserValue" destination="cjm-7v-XMh" id="fXw-Gz-f1c"/>
+                        <outlet property="labelDemoError" destination="lRj-07-dYf" id="7ye-xo-Upn"/>
+                        <outlet property="labelEvents" destination="rmM-F4-rYw" id="Odl-Df-uro"/>
+                        <outlet property="loading" destination="gdN-IR-MLa" id="vy0-Zt-LV8"/>
+                        <outlet property="pickerProductOrArticle" destination="O3F-hq-83F" id="FfO-Hg-Xrd"/>
+                        <outlet property="pickerStatus" destination="pQZ-qu-tya" id="bhP-rs-zC7"/>
+                        <outlet property="pickerUserField" destination="A4P-vm-QbS" id="ZfA-GO-6fL"/>
+                        <outlet property="stackEvents" destination="Ckm-D2-xjq" id="aVa-1u-czV"/>
+                        <outlet property="tableRes" destination="pXd-ZR-63w" id="wB6-QH-GnM"/>
+                        <segue destination="1co-wX-3qa" kind="show" identifier="toAction" id="0ax-Bu-h1d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYp-if-Azx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="629.60000000000002" y="64.31784107946028"/>
+        </scene>
+        <!--Action View Controller-->
+        <scene sceneID="DXg-DR-vTI">
+            <objects>
+                <viewController id="1co-wX-3qa" customClass="ActionViewController" customModule="Personyze_SDK_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDY-Oc-lYu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mRK-hr-1eI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="623"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-bb-Hdj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbM-rP-juk">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cna-EH-v8x">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="e4A-bb-Hdj" firstAttribute="top" secondItem="mRK-hr-1eI" secondAttribute="top" id="8ql-X9-Ni7"/>
+                                    <constraint firstAttribute="trailing" secondItem="e4A-bb-Hdj" secondAttribute="trailing" id="F92-aI-pXv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="mRK-hr-1eI" secondAttribute="bottom" constant="-20" id="5b1-S7-QsV"/>
+                            <constraint firstAttribute="trailing" secondItem="mRK-hr-1eI" secondAttribute="trailing" id="ApF-Ty-pFv"/>
+                            <constraint firstItem="mRK-hr-1eI" firstAttribute="leading" secondItem="sDY-Oc-lYu" secondAttribute="leading" id="mmH-YN-MTT"/>
+                            <constraint firstItem="mRK-hr-1eI" firstAttribute="top" secondItem="Eyt-Qe-vq5" secondAttribute="top" id="zlh-gp-LSk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eyt-Qe-vq5"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelStatus" destination="BbM-rP-juk" id="qyo-Q1-90v"/>
+                        <outlet property="loading" destination="e4A-bb-Hdj" id="35X-sr-Q51"/>
+                        <outlet property="webView" destination="Cna-EH-v8x" id="PjO-M4-4p0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dY5-o2-mJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UP7-m9-xgl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j0G-lH-rf5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sK8-FH-0ie">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="He1-I4-qys"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWR-ww-R4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-986" y="65"/>
+        </scene>
+    </scenes>
+</document>
