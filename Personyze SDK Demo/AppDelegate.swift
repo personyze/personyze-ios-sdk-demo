@@ -6,41 +6,59 @@
 //  Copyright © 2019 Personyze. All rights reserved.
 //
 
+import Personyze
 import UIKit
+import UserNotifications
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+/// How the demo sets the SDK up.
+enum Demo
+{	/// Where the key the user typed is kept (`MYTextField` saves it). A real app has its key in its code.
+	static let apiKeyStorage = "API Key"
 
-    var window: UIWindow?
+	static var storedKey: String?
+	{	UserDefaults.standard.string(forKey: apiKeyStorage).flatMap { $0.count == 40 ? $0 : nil }
+	}
 
+	/// Again with the same key keeps the client; another key replaces it.
+	static func initialize(apiKey: String)
+	{	Personyze.initialize(
+			PersonyzeConfig(apiKey: apiKey)
+			{	$0.notifications = true
+				$0.onError = { error, context in
+					print("Personyze, \(context.operation): \(error.message)")
+				}
+			}
+		)
+	}
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+	/// Notifications of "Web Push Send" campaigns appear only once the user allows them.
+	static func askForNotifications()
+	{	UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in
+		}
+	}
 }
 
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate
+{	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+	{	// As the app starts: a launch for background refresh finds the key only here.
+		if let key = Demo.storedKey
+		{	Demo.initialize(apiKey: key)
+		}
+		UNUserNotificationCenter.current().delegate = self
+		return true
+	}
+
+	/// A notification arriving while the demo is in front is shown too.
+	nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions
+	{	[.banner, .list, .sound]
+	}
+
+	/// A tap on a Personyze notification, or on one of its buttons, opens where it leads.
+	nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async
+	{	if Personyze.handleNotificationResponse(response)
+		{	return
+		}
+		// The app's own notifications would be handled here.
+	}
+}

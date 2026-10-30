@@ -8,38 +8,36 @@
 
 import UIKit
 
+/// The first screen: the API key.
 class ViewController: UIViewController
-{   @IBOutlet weak var inputKey: MYTextField!
-    @IBOutlet weak var labelError: UILabel!
+{	@IBOutlet weak var inputKey: MYTextField!
+	@IBOutlet weak var labelError: UILabel!
 
-    override func viewDidLoad()
-    {   super.viewDidLoad()
-
-		inputKey.setStorageKey("API Key")
+	override func viewDidLoad()
+	{	super.viewDidLoad()
+		inputKey.setStorageKey(Demo.apiKeyStorage)
 		inputKey.setDidEndEditing(textFieldDidEndEditing)
-    }
+	}
 
 	func textFieldDidEndEditing(textField: UITextField)
 	{	if textField == inputKey && initTracker()
 		{	performSegue(withIdentifier: "toDemo", sender: self)
 		}
 	}
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
-    {   return identifier != "toDemo" || initTracker()
-    }
 
-    func initTracker() -> Bool
-    {	if (inputKey.text ?? "").count != 40
-        {   labelError.text = "API key must be 40 characters"
-            return false
-        }
-        else
-        {   labelError.text = ""
-            PersonyzeTracker.inst.initialize(apiKey: inputKey.text ?? "")
-            return true
-        }
-    }
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+	{	identifier != "toDemo" || initTracker()
+	}
+
+	func initTracker() -> Bool
+	{	let key = (inputKey.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+		if key.count != 40
+		{	labelError.text = "API key must be 40 characters"
+			return false
+		}
+		labelError.text = ""
+		Demo.initialize(apiKey: key)
+		Demo.askForNotifications()
+		return true
+	}
 }
-
-

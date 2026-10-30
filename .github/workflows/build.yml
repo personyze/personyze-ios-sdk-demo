@@ -1,0 +1,18 @@
+# Builds the demo for the iOS Simulator with the SDK it depends on, so a change on either side that
+# breaks the demo shows here.
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Demo for the iOS Simulator
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: xcodebuild -version
+      - name: Build
+        run: xcodebuild build -project "Personyze SDK Demo.xcodeproj" -scheme "Personyze SDK Demo" -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet

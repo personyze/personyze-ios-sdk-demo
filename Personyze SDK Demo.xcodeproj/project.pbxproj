@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275C57012300000000000012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C57012300000000000011 /* SceneDelegate.swift */; };
+		275C57012300000000000013 /* Personyze in Frameworks */ = {isa = PBXBuildFile; productRef = 275C57012300000000000015 /* Personyze */; };
 		275C56D2223143C30081EE09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56D1223143C30081EE09 /* AppDelegate.swift */; };
 		275C56D4223143C30081EE09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56D3223143C30081EE09 /* ViewController.swift */; };
 		275C56D7223143C30081EE09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275C56D5223143C30081EE09 /* Main.storyboard */; };
 		275C56D9223143C30081EE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C56D8223143C30081EE09 /* Assets.xcassets */; };
 		275C56DC223143C30081EE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275C56DA223143C30081EE09 /* LaunchScreen.storyboard */; };
 		275C56E42231A9BA0081EE09 /* MYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56E32231A9BA0081EE09 /* MYTextField.swift */; };
-		275C56E62231AB5E0081EE09 /* PersonyzeIosSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56E52231AB5E0081EE09 /* PersonyzeIosSdk.swift */; };
 		275C56EA2231DCBD0081EE09 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56E92231DCBD0081EE09 /* DemoViewController.swift */; };
 		275C56EC22329BC40081EE09 /* MYPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56EB22329BC40081EE09 /* MYPickerView.swift */; };
 		275C56EE2232A5540081EE09 /* MYTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56ED2232A5530081EE09 /* MYTableView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		275C57012300000000000011 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		275C56CE223143C20081EE09 /* Personyze SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Personyze SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		275C56D1223143C30081EE09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		275C56D3223143C30081EE09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,6 @@
 		275C56DB223143C30081EE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		275C56DD223143C30081EE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275C56E32231A9BA0081EE09 /* MYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYTextField.swift; sourceTree = "<group>"; };
-		275C56E52231AB5E0081EE09 /* PersonyzeIosSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonyzeIosSdk.swift; sourceTree = "<group>"; };
 		275C56E92231DCBD0081EE09 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		275C56EB22329BC40081EE09 /* MYPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYPickerView.swift; sourceTree = "<group>"; };
 		275C56ED2232A5530081EE09 /* MYTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYTableView.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275C57012300000000000013 /* Personyze in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,10 +72,10 @@
 				275C56EB22329BC40081EE09 /* MYPickerView.swift */,
 				275C56ED2232A5530081EE09 /* MYTableView.swift */,
 				275C56D1223143C30081EE09 /* AppDelegate.swift */,
+				275C57012300000000000011 /* SceneDelegate.swift */,
 				275C56D3223143C30081EE09 /* ViewController.swift */,
 				275C56E92231DCBD0081EE09 /* DemoViewController.swift */,
 				275C56F1223445050081EE09 /* ActionViewController.swift */,
-				275C56E52231AB5E0081EE09 /* PersonyzeIosSdk.swift */,
 				275C56D5223143C30081EE09 /* Main.storyboard */,
 				275C56D8223143C30081EE09 /* Assets.xcassets */,
 				275C56DA223143C30081EE09 /* LaunchScreen.storyboard */,
@@ -98,6 +100,9 @@
 			dependencies = (
 			);
 			name = "Personyze SDK Demo";
+			packageProductDependencies = (
+				275C57012300000000000015 /* Personyze */,
+			);
 			productName = "Personyze SDK Demo";
 			productReference = 275C56CE223143C20081EE09 /* Personyze SDK Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -119,7 +124,7 @@
 				};
 			};
 			buildConfigurationList = 275C56C9223143C20081EE09 /* Build configuration list for PBXProject "Personyze SDK Demo" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 275C56C5223143C20081EE09;
+			packageReferences = (
+				275C57012300000000000014 /* XCRemoteSwiftPackageReference "personyze-ios-sdk" */,
+			);
 			productRefGroup = 275C56CF223143C20081EE09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,11 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275C56E62231AB5E0081EE09 /* PersonyzeIosSdk.swift in Sources */,
 				275C56D4223143C30081EE09 /* ViewController.swift in Sources */,
 				275C56F2223445050081EE09 /* ActionViewController.swift in Sources */,
 				275C56EC22329BC40081EE09 /* MYPickerView.swift in Sources */,
 				275C56D2223143C30081EE09 /* AppDelegate.swift in Sources */,
+				275C57012300000000000012 /* SceneDelegate.swift in Sources */,
 				275C56E42231A9BA0081EE09 /* MYTextField.swift in Sources */,
 				275C56EA2231DCBD0081EE09 /* DemoViewController.swift in Sources */,
 				275C56EE2232A5540081EE09 /* MYTableView.swift in Sources */,
@@ -235,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -303,7 +311,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Personyze.Personyze-SDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -317,7 +325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Personyze.Personyze-SDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		275C57012300000000000014 /* XCRemoteSwiftPackageReference "personyze-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/personyze/personyze-ios-sdk";
+			requirement = {
+				branch = "v2-wip";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		275C57012300000000000015 /* Personyze */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 275C57012300000000000014 /* XCRemoteSwiftPackageReference "personyze-ios-sdk" */;
+			productName = Personyze;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 275C56C6223143C20081EE09 /* Project object */;
 }
