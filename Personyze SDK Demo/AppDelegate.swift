@@ -49,6 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		return true
 	}
 
+	/// The device's push token, which the SDK asked iOS for: passed on, Personyze pushes this visitor's
+	/// notifications at once, when the account has its Apple push key. Without the Push Notifications
+	/// capability iOS answers `didFailToRegisterForRemoteNotificationsWithError` instead, and the
+	/// notifications come at the app's next check.
+	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
+	{	Personyze.setPushToken(deviceToken)
+	}
+
 	/// A notification arriving while the demo is in front is shown too.
 	nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions
 	{	[.banner, .list, .sound]
