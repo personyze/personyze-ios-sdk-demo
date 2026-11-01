@@ -19,7 +19,34 @@
 		275C56EC22329BC40081EE09 /* MYPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56EB22329BC40081EE09 /* MYPickerView.swift */; };
 		275C56EE2232A5540081EE09 /* MYTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56ED2232A5530081EE09 /* MYTableView.swift */; };
 		275C56F2223445050081EE09 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C56F1223445050081EE09 /* ActionViewController.swift */; };
+		275C57012300000000000019 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C57012300000000000016 /* NotificationService.swift */; };
+		275C5701230000000000001A /* PersonyzeNotificationService in Frameworks */ = {isa = PBXBuildFile; productRef = 275C5701230000000000001B /* PersonyzeNotificationService */; };
+		275C57012300000000000027 /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 275C57012300000000000018 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		275C57012300000000000024 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 275C56C6223143C20081EE09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275C57012300000000000020;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		275C57012300000000000026 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				275C57012300000000000027 /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		275C57012300000000000011 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +62,10 @@
 		275C56EB22329BC40081EE09 /* MYPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYPickerView.swift; sourceTree = "<group>"; };
 		275C56ED2232A5530081EE09 /* MYTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYTableView.swift; sourceTree = "<group>"; };
 		275C56F1223445050081EE09 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		275C57012300000000000016 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		275C57012300000000000017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275C57012300000000000018 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		275C57012300000000000028 /* Personyze SDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Personyze SDK Demo.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +77,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		275C5701230000000000001E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275C5701230000000000001A /* PersonyzeNotificationService in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -53,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				275C56D0223143C20081EE09 /* Personyze SDK Demo */,
+				275C5701230000000000001C /* NotificationService */,
 				275C56CF223143C20081EE09 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				275C56CE223143C20081EE09 /* Personyze SDK Demo.app */,
+				275C57012300000000000018 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,8 +121,18 @@
 				275C56D8223143C30081EE09 /* Assets.xcassets */,
 				275C56DA223143C30081EE09 /* LaunchScreen.storyboard */,
 				275C56DD223143C30081EE09 /* Info.plist */,
+				275C57012300000000000028 /* Personyze SDK Demo.entitlements */,
 			);
 			path = "Personyze SDK Demo";
+			sourceTree = "<group>";
+		};
+		275C5701230000000000001C /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				275C57012300000000000016 /* NotificationService.swift */,
+				275C57012300000000000017 /* Info.plist */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,10 +145,12 @@
 				275C56CA223143C20081EE09 /* Sources */,
 				275C56CB223143C20081EE09 /* Frameworks */,
 				275C56CC223143C20081EE09 /* Resources */,
+				275C57012300000000000026 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				275C57012300000000000025 /* PBXTargetDependency */,
 			);
 			name = "Personyze SDK Demo";
 			packageProductDependencies = (
@@ -106,6 +159,26 @@
 			productName = "Personyze SDK Demo";
 			productReference = 275C56CE223143C20081EE09 /* Personyze SDK Demo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		275C57012300000000000020 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275C57012300000000000021 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				275C5701230000000000001D /* Sources */,
+				275C5701230000000000001E /* Frameworks */,
+				275C5701230000000000001F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			packageProductDependencies = (
+				275C5701230000000000001B /* PersonyzeNotificationService */,
+			);
+			productName = NotificationService;
+			productReference = 275C57012300000000000018 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -140,6 +213,7 @@
 			projectRoot = "";
 			targets = (
 				275C56CD223143C20081EE09 /* Personyze SDK Demo */,
+				275C57012300000000000020 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +226,13 @@
 				275C56DC223143C30081EE09 /* LaunchScreen.storyboard in Resources */,
 				275C56D9223143C30081EE09 /* Assets.xcassets in Resources */,
 				275C56D7223143C30081EE09 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		275C5701230000000000001F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +254,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		275C5701230000000000001D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275C57012300000000000019 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		275C57012300000000000025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275C57012300000000000020 /* NotificationService */;
+			targetProxy = 275C57012300000000000024 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		275C56D5223143C30081EE09 /* Main.storyboard */ = {
@@ -306,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Personyze SDK Demo/Personyze SDK Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Personyze SDK Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -320,11 +418,42 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Personyze SDK Demo/Personyze SDK Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Personyze SDK Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Personyze.Personyze-SDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		275C57012300000000000022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Personyze.Personyze-SDK-Demo.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		275C57012300000000000023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Personyze.Personyze-SDK-Demo.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,6 +480,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		275C57012300000000000021 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275C57012300000000000022 /* Debug */,
+				275C57012300000000000023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -358,7 +496,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/personyze/personyze-ios-sdk";
 			requirement = {
-				branch = "v2-wip";
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -369,6 +507,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 275C57012300000000000014 /* XCRemoteSwiftPackageReference "personyze-ios-sdk" */;
 			productName = Personyze;
+		};
+		275C5701230000000000001B /* PersonyzeNotificationService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 275C57012300000000000014 /* XCRemoteSwiftPackageReference "personyze-ios-sdk" */;
+			productName = PersonyzeNotificationService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -23,13 +23,27 @@ The visit shows in the panel's Live visits, as from an iOS device.
 
 | | |
 | --- | --- |
-| `AppDelegate.swift` | `Personyze.initialize` as the app starts, and a notification delegate passing taps on to `Personyze.handleNotificationResponse` |
+| `AppDelegate.swift` | `Personyze.initialize` as the app starts, the device's push token passed on (`Personyze.setPushToken`), and a notification delegate passing taps on to `Personyze.handleNotificationResponse` |
 | `DemoViewController.swift` | Events, `Personyze.navigate` with its events closure, `Personyze.refresh`, `Personyze.results` |
 | `ActionViewController.swift` | `PersonyzeActionView` |
 | `Info.plist` | The background refresh the SDK uses when the app declares it (`com.personyze.sdk.refresh`, `fetch`) |
+| `NotificationService/` | The Notification Service Extension: a pushed notification's picture and buttons, and its "shown" report - all of it the SDK's `PersonyzeNotificationService` |
 
-Until SDK 2.0.0 is released, the project follows the SDK's `v2-wip` branch: Xcode's File > Packages > Update to
-Latest Package Versions picks up its latest.
+The project follows the SDK's `main` branch: Xcode's File > Packages > Update to Latest Package Versions picks up
+its latest.
+
+## Push
+
+With push, a "Web Push Send" campaign's notification arrives at once, the app closed, instead of at the app's next
+check. The project has the Push Notifications capability and its extension; what each tester needs:
+
+1. A paid Apple Developer team (a personal team cannot sign the capability). In Signing & Capabilities, pick it for
+   both targets, and give them a bundle id of the team's - the extension's is the app's plus `.NotificationService`.
+2. An APNs key of that team, uploaded in the Personyze panel, Integrations > App push, on the account the demo uses
+   (Certificates, Identifiers & Profiles > Keys > + > Apple Push Notifications service; the .p8, its Key ID, the
+   Team ID).
+3. Run on an iPhone (or a simulator on an Apple-silicon Mac) and allow notifications. The SDK asks iOS for the token,
+   and `AppDelegate` passes it on (`Personyze.setPushToken`).
 
 See also:
 
