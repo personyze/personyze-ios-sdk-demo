@@ -43,7 +43,9 @@ check. The project has the Push Notifications capability and its extension; what
    (Certificates, Identifiers & Profiles > Keys > + > Apple Push Notifications service; the .p8, its Key ID, the
    Team ID).
 3. Run on an iPhone (or a simulator on an Apple-silicon Mac) and allow notifications. The SDK asks iOS for the token,
-   and `AppDelegate` passes it on (`Personyze.setPushToken`).
+   and `AppDelegate` passes it on (`Personyze.setPushToken`). The device registers after the first request (Proceed
+   navigation); the demo screen then says "push: registered for <visitor>".
+4. In the panel, Integrations > App push counts the device; **Send a test notification** pushes one at once.
 
 See also:
 

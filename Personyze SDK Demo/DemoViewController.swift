@@ -116,6 +116,8 @@ class DemoViewController: UIViewController
 	private var result = PersonyzeResult.empty
 	private var curAction: PersonyzeAction?
 	private var following: Task<Void, Never>?
+	private var followingPush: Task<Void, Never>?
+	private var pushLine = ""
 
 	override func viewDidLoad()
 	{	super.viewDidLoad()
@@ -142,12 +144,34 @@ class DemoViewController: UIViewController
 			{	self?.show(result)
 			}
 		}
+		// Where push stands: registered after the first request, and pushed once the account has its Apple key.
+		followingPush = Task { [weak self] in
+			for await status in Personyze.pushStatuses
+			{	self?.pushLine = DemoViewController.pushWords(status)
+				if let self
+				{	self.show(self.result)
+				}
+			}
+		}
+	}
+
+	/// What `PersonyzePushStatus` says, in words.
+	private static func pushWords(_ s: PersonyzePushStatus) -> String
+	{	guard s.token != nil else
+		{	return "push: no token yet"
+		}
+		guard let visitor = s.registeredVisitorId else
+		{	return "push: token, not registered yet"
+		}
+		return s.pushed ? "push: registered for \(visitor), pushed at once" : "push: registered for \(visitor), no Apple key - checked"
 	}
 
 	override func viewDidDisappear(_ animated: Bool)
 	{	super.viewDidDisappear(animated)
 		following?.cancel()
 		following = nil
+		followingPush?.cancel()
+		followingPush = nil
 	}
 
 	@IBAction func clickedNewSession(_ sender: UIButton)
@@ -269,7 +293,8 @@ class DemoViewController: UIViewController
 		}
 		else
 		{	let visitor = Personyze.visitor
-			labelDemoError.text = visitor.visitorId.map { "Visitor \($0)" + (visitor.userId.map { " (\($0))" } ?? "") } ?? ""
+			let who = visitor.visitorId.map { "Visitor \($0)" + (visitor.userId.map { " (\($0))" } ?? "") } ?? ""
+			labelDemoError.text = [who, pushLine].filter { !$0.isEmpty }.joined(separator: " · ")
 		}
 		var rows: [(String, Bool)] = []
 		rows.append(("**\(result.conditions.count) conditions**", false))
