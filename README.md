@@ -29,8 +29,8 @@ The visit shows in the panel's Live visits, as from an iOS device.
 | `Info.plist` | The background refresh the SDK uses when the app declares it (`com.personyze.sdk.refresh`, `fetch`) |
 | `NotificationService/` | The Notification Service Extension: a pushed notification's picture and buttons, and its "shown" report - all of it the SDK's `PersonyzeNotificationService` |
 
-The project follows the SDK's `main` branch: Xcode's File > Packages > Update to Latest Package Versions picks up
-its latest.
+The project asks for the SDK from 2.0.0 up to the next major version, as an app would: Xcode's File > Packages >
+Update to Latest Package Versions picks up its latest release.
 
 ## Push
 
